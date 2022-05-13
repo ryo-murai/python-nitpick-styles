@@ -1,0 +1,49 @@
+
+[".flake8".flake8]
+exclude = ".git,__pycache__,docs/source/conf.py,old,build,dist,.aws-sam"
+max-line-length = 120
+max-complexity = 20
+doctests = true
+
+["pyproject.toml".tool.black]
+line-length = 120
+
+["pyproject.toml".tool.mypy]
+warn_return_any = true
+warn_unused_configs = true
+warn_unreachable = true
+strict_optional = true
+
+disallow_untyped_defs = true
+disallow_incomplete_defs = true
+check_untyped_defs = true
+show_none_errors = true
+
+warn_no_return = true
+
+warn_redundant_casts = true
+warn_unused_ignores = false
+
+pretty = true
+
+exclude = [
+  'tests/*',
+  '^test_*\.py$'
+] 
+
+# https://github.com/andreoliwa/nitpick/blob/develop/src/nitpick/resources/python/isort.toml
+["pyproject.toml".tool.isort]
+line_length = 120
+
+# The configuration below is needed for compatibility with black.
+# https://github.com/python/black#how-black-wraps-lines
+# https://github.com/PyCQA/isort#multi-line-output-modes
+multi_line_output = 3
+include_trailing_comma = true
+force_grid_wrap = 0
+combine_as_imports = true
+
+["pyproject.toml".tool.pytest.ini_options]
+env_files = [
+    ".pytest.env"
+]
