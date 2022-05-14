@@ -1,5 +1,7 @@
-[nitpick.files."pyproject.toml"]
-comma_separated_values = ["pytest.ini_options.env"]
+[nitpick.styles]
+include = [
+  "nitpick-style.toml"
+]
 
 #
 # pytest-env config
@@ -7,12 +9,19 @@ comma_separated_values = ["pytest.ini_options.env"]
 ["pyproject.toml".tool.pytest.ini_options]
 # to prevent tests mutate the real aws environments.
 # http://docs.getmoto.org/en/latest/docs/getting_started.html?highlight=default_region#how-do-i-avoid-tests-from-mutating-my-real-infrastructure
-env = "AWS_ACCESS_KEY_ID=testing,AWS_SECRET_ACCESS_KEY=testing,AWS_SECURITY_TOKEN=testing,AWS_SESSION_TOKEN=testing,AWS_DEFAULT_REGION=ap-northeast-1"
+env = [
+  "AWS_ACCESS_KEY_ID=testing",
+  "AWS_SECRET_ACCESS_KEY=testing",
+  "AWS_SECURITY_TOKEN=testing",
+  "AWS_SESSION_TOKEN=testing",
+  "AWS_DEFAULT_REGION=ap-northeast-1"
+]
 
 ["Pipfile".dev-packages]
-boto3 = "*"
-boto3-stubs = {extras = ["essential"], version = "*"}
-moto = "*"
+# each projects should depend boto3/moto with specific "extras" 
+#boto3 = "*"
+#boto3-stubs = {extras = ["essential"], version = "*"}
+#moto = "*"
 
 # if you want install aws cli and sam cli in venv through pipenv,
 # uncomment below lines.
@@ -21,6 +30,10 @@ moto = "*"
 
 pytest-env = "*"
 cfn-lint = "*"
+
+["Pipfile".requires]
+# current latest runtime version aws lambda
+python_version = "3.9"
 
 ["Pipfile".scripts]
 cfn-lint = "cfn-lint template.yaml"

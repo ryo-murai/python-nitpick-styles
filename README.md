@@ -1,18 +1,30 @@
 # my personal nitpick styles
 
-## usage
-* install [nitpick]()
+## usage (using pipenv)
+* install [nitpick](https://nitpick.readthedocs.io/en/latest/index.html)
 ```bash
-pip install nitpick
+pipenv install nitpick
 ```
 
 * initialize
 ```bash
+pipenv shell
 nitpick init github://ryo-murai/python-nitpick-styles/nitpick-style.toml
 
+# or use aws-sam style. 
+nitpick init github://ryo-murai/python-nitpick-styles/nitpick-aws-sam-style.toml
+# aws-sam style include above basic style
 ```
 
 * create / update configs
 ```bash
+# check
+nitpick check
+# or apply(create or update) files
 nitpick fix
+```
+
+* use pipenv run in CI
+```bash
+pipenv run nitpick-check
 ```

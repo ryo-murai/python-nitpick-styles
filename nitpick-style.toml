@@ -1,6 +1,6 @@
 [nitpick.files.absent]
-mypy.ini = "use pyproject.toml instead"
-pytest.ini = "use pyproject.toml instead"
+"mypy.ini" = "use pyproject.toml instead"
+"pytest.ini" = "use pyproject.toml instead"
 
 #
 # flake8 config
