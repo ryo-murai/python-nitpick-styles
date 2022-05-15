@@ -3,7 +3,7 @@
 ## usage (using pipenv)
 * install [nitpick](https://nitpick.readthedocs.io/en/latest/index.html)
 ```bash
-pipenv install nitpick
+pipenv install nitpick --dev
 ```
 
 * initialize

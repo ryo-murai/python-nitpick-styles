@@ -6,7 +6,7 @@
 # flake8 config
 #
 [".flake8".flake8]
-exclude = ".git,__pycache__,docs/source/conf.py,old,build,dist,.aws-sam"
+exclude = ".git,__pycache__,docs/source/conf.py,.venv,old,build,dist,.aws-sam"
 max-line-length = 120
 max-complexity = 20
 doctests = true
@@ -53,10 +53,7 @@ warn_unused_ignores = false
 
 pretty = true
 
-exclude = [
-  'tests/*',
-  '^test_*\.py$'
-] 
+exclude = '(?x)( (^|/)tests/ )'
 
 #
 # pipenv config
