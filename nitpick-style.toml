@@ -11,6 +11,13 @@ max-line-length = 120
 max-complexity = 20
 doctests = true
 
+# ignore errors
+# D400: First line should end with a period
+# D415: First line should end with a period, question mark, or exclamation point
+ignore = "D400,D415"
+# docstrings convention
+convention = "google"
+
 #
 # black config
 #
@@ -61,6 +68,7 @@ exclude = '(?x)( (^|/)tests/ )'
 ["Pipfile".dev-packages]
 black = "*"
 flake8 = "*"
+flake8-docstrings = "*"
 isort = "*"
 mypy = "*"
 nitpick = "*"
