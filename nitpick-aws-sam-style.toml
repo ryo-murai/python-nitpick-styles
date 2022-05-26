@@ -4,6 +4,13 @@ include = [
 ]
 
 #
+# mypy config
+#
+# ## ignore no imports for `moto` stubs ##
+["mypy.ini".mypy-moto]
+ignore_missing_imports = true
+
+#
 # pytest-env config
 #
 ["pyproject.toml".tool.pytest.ini_options]

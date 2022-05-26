@@ -1,5 +1,4 @@
 [nitpick.files.absent]
-"mypy.ini" = "use pyproject.toml instead"
 "pytest.ini" = "use pyproject.toml instead"
 
 #
@@ -12,9 +11,12 @@ max-complexity = 20
 doctests = true
 
 # ignore errors
+# D100: Missing docstring in public module
+# D104: Missing docstring in public package
 # D400: First line should end with a period
 # D415: First line should end with a period, question mark, or exclamation point
-ignore = "D400,D415"
+# NIP*: (flake8-nitpick plugin check results.) It checks *.py(like setup.py) in the root dir but there's nothing.
+ignore = "D100,D104,D400,D415,NIP"
 # docstrings convention
 convention = "google"
 
@@ -42,7 +44,8 @@ combine_as_imports = true
 #
 # mypy config
 #
-["pyproject.toml".tool.mypy]
+# ## global config ##
+["mypy.ini".mypy]
 warn_return_any = true
 warn_unused_configs = true
 warn_unreachable = true
@@ -56,11 +59,22 @@ show_none_errors = true
 warn_no_return = true
 
 warn_redundant_casts = true
-warn_unused_ignores = false
+warn_unused_ignores = true
 
 pretty = true
 
-exclude = '(?x)( (^|/)tests/ )'
+# ## test code config ##
+["mypy.ini"."mypy-tests.*"]
+ignore_missing_imports = true
+warn_return_any = false
+warn_unreachable = false
+strict_optional = false
+disallow_untyped_defs = false
+disallow_incomplete_defs = false
+check_untyped_defs = false
+show_none_errors = false
+warn_no_return = false
+warn_unused_ignores = false
 
 #
 # pipenv config
