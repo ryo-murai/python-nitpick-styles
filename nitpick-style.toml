@@ -11,12 +11,13 @@ max-complexity = 20
 doctests = true
 
 # ignore errors
+# W503: line break before binary operator
 # D100: Missing docstring in public module
 # D104: Missing docstring in public package
 # D400: First line should end with a period
 # D415: First line should end with a period, question mark, or exclamation point
 # NIP*: (flake8-nitpick plugin check results.) It checks *.py(like setup.py) in the root dir but there's nothing.
-ignore = "D100,D104,D400,D415,NIP"
+ignore = "W503,D100,D104,D400,D415,NIP"
 # docstrings convention
 convention = "google"
 
