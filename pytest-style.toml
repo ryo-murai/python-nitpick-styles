@@ -1,0 +1,35 @@
+[nitpick.files.absent]
+"pytest.ini" = "use pyproject.toml instead"
+
+
+#
+# pytest-cov config
+#
+["pyproject.toml".tool.pytest.ini_options]
+addopts = "--cov=. --cov-branch --cov-report=xml"
+
+#
+# pipenv config
+#
+["Pipfile".dev-packages]
+pytest = "*"
+pytest-cov = "*"
+pytest-mock = "*"
+greezegun = "*"
+
+[".vscode/settings.json".contains_json]
+"coverage-gutters" = """{
+    "showGutterCoverage": true,
+    "showLineCoverage": true,
+    "showRulerCoverage": true
+}
+"""
+"python" = """{
+  "testing.pytestEnabled": true,
+  "testing.autoTestDiscoverOnSaveEnabled": true,
+  "testing.pytestArgs": [
+      "--no-cov",
+      "-v"
+  ]
+}
+"""

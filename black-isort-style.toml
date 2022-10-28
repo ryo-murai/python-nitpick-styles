@@ -1,0 +1,51 @@
+[nitpick.files.absent]
+".isort.cfg" = "use pyproject.toml instead"
+
+#
+# black config
+#
+["pyproject.toml".tool.black]
+line-length = 120
+
+#
+# isort config
+#
+# https://github.com/andreoliwa/nitpick/blob/develop/src/nitpick/resources/python/isort.toml
+["pyproject.toml".tool.isort]
+line_length = 120
+
+# The configuration below is needed for compatibility with black.
+# https://github.com/python/black#how-black-wraps-lines
+# https://github.com/PyCQA/isort#multi-line-output-modes
+multi_line_output = 3
+include_trailing_comma = true
+force_grid_wrap = 0
+combine_as_imports = true
+
+#
+# pipenv config
+#
+["Pipfile".dev-packages]
+black = "*"
+isort = "*"
+
+
+#
+# vscode setting
+#
+[".vscode/settings.json".contains_json]
+"python" = """{
+  "formatting.provider": "black"
+}
+"""
+"[python]" = """{
+  "editor.tabSize": 4
+}
+"""
+"editor" = """{
+  "formatOnSave": true,
+  "codeActionsOnSave": {
+    "source.organizeImports": true
+  }
+}
+"""

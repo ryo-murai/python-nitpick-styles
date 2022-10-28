@@ -1,0 +1,51 @@
+#
+# mypy config
+#
+# ## global config ##
+["mypy.ini".mypy]
+warn_return_any = true
+warn_unused_configs = true
+warn_unreachable = true
+strict_optional = true
+
+disallow_untyped_defs = true
+disallow_incomplete_defs = true
+check_untyped_defs = true
+show_none_errors = true
+
+warn_no_return = true
+
+warn_redundant_casts = true
+warn_unused_ignores = true
+
+pretty = true
+
+
+# ## test code config ##
+# name of tests module is supposed to be `tests`
+["mypy.ini"."mypy-tests.*"]
+ignore_missing_imports = true
+warn_return_any = false
+warn_unreachable = false
+strict_optional = false
+disallow_untyped_defs = false
+disallow_incomplete_defs = false
+check_untyped_defs = false
+show_none_errors = false
+warn_no_return = false
+
+#
+# pipenv config
+#
+["Pipfile".dev-packages]
+mypy = "*"
+
+
+#
+# vscode setting
+#
+[".vscode/settings.json".contains_json]
+"python" = """{
+  "linting.flake8Enabled": true
+}
+"""

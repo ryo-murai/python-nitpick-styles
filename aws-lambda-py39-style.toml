@@ -1,0 +1,14 @@
+
+["Pipfile".packages]
+aws_lambda_typing = "*"
+
+["Pipfile".dev-packages]
+# boto3 on AWS Lambda Runtime
+#   see https://docs.aws.amazon.com/lambda/latest/dg/lambda-runtimes.html
+boto3 = {version = "==1.20.32"}
+botocore = {version = "==1.23.32"}
+boto3-stubs = {version = "==1.20.32"}
+botocore-stubs = {version = "==1.23.32"}
+
+["Pipfile".requires]
+python_version = "3.9"

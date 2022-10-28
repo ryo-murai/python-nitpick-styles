@@ -1,0 +1,15 @@
+
+
+#
+# vscode setting
+#
+[".vscode/settings.json".contains_json]
+"python" = """{
+  "formatting.provider": "black"
+}
+"""
+"editor" = """{
+  "analysis.completeFunctionParens": true,
+  "bracketPairColorization.enabled": true
+}
+"""

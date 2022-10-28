@@ -1,0 +1,46 @@
+#
+# flake8 config
+#
+[".flake8".flake8]
+exclude = ".git,__pycache__,docs/source/conf.py,.venv,old,build,dist,.aws-sam"
+max-line-length = 120
+max-complexity = 20
+
+# ignore errors
+# W503: line break before binary operator
+# D100: Missing docstring in public module
+# D104: Missing docstring in public package
+# D400: First line should end with a period
+# D415: First line should end with a period, question mark, or exclamation point
+# NIP*: (flake8-nitpick plugin check results.) It checks *.py(like setup.py) in the root dir but there's nothing.
+ignore = "W503,D100,D104,D400,D415,NIP"
+
+# docstrings convention
+convention = "google"
+
+#
+# pipenv config
+#
+["Pipfile".dev-packages]
+flake8 = "*"
+flake8-print = "*"
+pep8-naming = "*"
+flake8-docstrings = "*"
+
+["Pipfile".scripts]
+lint = "flake8 --show-source ."
+
+#
+# vscode setting
+#
+[".vscode/settings.json".contains_json]
+"python.linting" = """{
+    "lintOnSave": true,
+    "enabled": true,
+    "pylintEnabled": false,
+    "flake8Enabled": true
+}
+"""
+"autoDocstring" = """{
+  "docstringFormat": "google"
+}"""
