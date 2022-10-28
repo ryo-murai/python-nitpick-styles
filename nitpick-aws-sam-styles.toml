@@ -5,8 +5,8 @@ minimum_version = "0.32.0"
 include = [
   "nitpick-python-styles.toml",
 
-  "aws-lambda-py39-style.toml",
-  "aws-sam-style.toml",
-  "moto-pytest-style.toml",
-  "cfn-lint-style.toml"
+  "styles/aws-lambda-py39-style.toml",
+  "styles/aws-sam-style.toml",
+  "styles/moto-pytest-style.toml",
+  "styles/cfn-lint-style.toml"
 ]

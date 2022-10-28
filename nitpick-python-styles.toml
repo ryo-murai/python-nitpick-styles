@@ -3,9 +3,9 @@ minimum_version = "0.32.0"
 
 [nitpick.styles]
 include = [
-  "pytest-style.toml",
-  "vscode-style.toml",
-  "black-isort-style.toml",
-  "flake8-style.toml",
-  "mypy-style.toml",
+  "styles/pytest-style.toml",
+  "styles/vscode-style.toml",
+  "styles/black-isort-style.toml",
+  "styles/flake8-style.toml",
+  "styles/mypy-style.toml",
 ]
