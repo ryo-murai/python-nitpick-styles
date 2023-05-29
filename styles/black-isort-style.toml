@@ -49,3 +49,6 @@ isort = "*"
   }
 }
 """
+"isort.args" = """
+["--profile", "black"]
+"""

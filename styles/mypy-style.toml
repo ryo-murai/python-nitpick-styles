@@ -16,7 +16,6 @@ show_none_errors = true
 warn_no_return = true
 
 warn_redundant_casts = true
-warn_unused_ignores = true
 
 pretty = true
 
